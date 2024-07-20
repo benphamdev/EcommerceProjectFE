@@ -76,3 +76,8 @@ npm install @mui/icons-material
 https://mui.com/material-ui/icons/#installation
 
 https://tailwindcss.com/docs/installation
+
+npm i @headlessui/react
+npm i @heroicons/react
+
+npm i react-alice-carousel@2.9.1
