@@ -1,7 +1,7 @@
-import "./App.css";
-import Footer from "./Customer/Components/Footer/Footer";
-import Navigation from "./Customer/Components/Navigation/Navigation";
-import HomePage from "./Customer/Pages/HomePage";
+import "./styles/App.css";
+import Footer from "./features/customer/components/footer/Footer";
+import Navigation from "./features/customer/components/navigation/Navigation";
+import HomePage from "./features/customer/pages/HomePage";
 
 function App() {
     return (
