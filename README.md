@@ -96,3 +96,5 @@ npm i @heroicons/react
 npm i react-alice-carousel@2.9.1
 
 npm i react-router-dom@6.25.1
+
+npm i --save--exact react-redux@8.0.5
