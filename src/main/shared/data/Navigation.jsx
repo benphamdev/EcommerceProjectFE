@@ -11,10 +11,6 @@ import { getUser } from "../../../Redux/Auth/Action";
 import { getCart } from "../../../Redux/Customers/Cart/Action";
 import AuthModal from "../Auth/AuthModal";
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-}
-
 export default function Navigation() {
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();

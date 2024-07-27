@@ -18,11 +18,8 @@ import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@her
 import { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { navigation } from "../../../../shared/utils/navigation";
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
+import { classNames } from "../../../../shared/utils/FunctionCommon";
+import { navigation } from "../../../../shared/utils/Navigation";
 
 export default function Navigation() {
     // hook
