@@ -6,8 +6,8 @@ export const Main = () => {
     return (
         <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-                <Route path="/" element={<App/>}/>
+                <Route path="/" element={<App />} />
             </Routes>
         </Suspense>
-    )
-}
+    );
+};

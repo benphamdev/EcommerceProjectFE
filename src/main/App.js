@@ -1,7 +1,7 @@
-import "./styles/App.css";
 import Footer from "./features/customer/components/footer/Footer";
 import Navigation from "./features/customer/components/navigation/Navigation";
-import Product from "./features/customer/components/product/Product";
+import "./styles/App.css";
+import ProductDetails from "./features/customer/components/product-details/ProductDetails";
 
 function App() {
     return (
@@ -12,7 +12,8 @@ function App() {
 
             <div>
                 {/*<HomePage/>*/}
-                <Product/>
+                {/*<Product />*/}
+                <ProductDetails/>
             </div>
 
             <div>
