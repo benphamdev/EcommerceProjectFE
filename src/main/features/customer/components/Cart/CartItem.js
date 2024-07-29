@@ -6,7 +6,7 @@ import { product } from "../../../../shared/utils/product";
 
 const CartItem = () => {
     return (
-        <div className={'p-5 shadow-lg border rounded-md'}>
+        <div className={'p-5 shadow-lg border rounded-md'} style={{ borderRadius: '0.5rem' }}>
 
             <div className={'flex items-center'}>
 
