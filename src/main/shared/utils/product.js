@@ -1,6 +1,8 @@
 const product = {
     name: 'Basic Tee 6-Pack',
     price: '$192',
+    discountPrice: '$160',
+    off: 'Save $32 (17%)',
     href: '#',
     breadcrumbs: [
         { id: 1, name: 'Men', href: '#' },
@@ -49,4 +51,63 @@ const product = {
 }
 const reviews = { href: '#', average: 4, totalCount: 117 }
 
-export { product, reviews }
+const star = [
+    {
+        id: '1 stars',
+        rating: 1,
+        full: false,
+        name: '1 star',
+        className: 'text-gray-600',
+        selectedClassName: 'text-gray-900',
+    },
+    {
+        id: '2 stars',
+        rating: 2,
+        full: false,
+        name: '1 star',
+        className: 'text-gray-600',
+        selectedClassName: 'text-gray-900',
+    },
+    {
+        id: '3 stars',
+        rating: 3,
+        full: false,
+        name: '1 star',
+        className: 'text-gray-600',
+        selectedClassName: 'text-gray-900',
+    },
+    {
+        id: '4 stars',
+        rating: 4,
+        full: true,
+        name: '1 star',
+        className: 'text-gray-600',
+        selectedClassName: 'text-gray-900',
+    },
+    {
+        id: '5 stars',
+        rating: 5,
+        full: true,
+        name: '1 star',
+        className: 'text-gray-600',
+        selectedClassName: 'text-gray-900',
+    },
+    {
+        id: 'All stars',
+        rating: 0,
+        full: false,
+        name: '1 star',
+        className: 'text-gray-600',
+        selectedClassName: 'text-gray-900',
+    }
+]
+
+const ratingCategories = [
+    { label: 'Excellent', value: 80, color: 'success', className: 'green' },
+    { label: 'Very Good', value: 70, color: 'success', className: 'lime' },
+    { label: 'Good', value: 60, color: 'success', className: 'yellow' },
+    { label: 'Average', value: 50, color: 'warning', className: 'blue' },
+    { label: 'Poor', value: 30, color: 'error', className: 'red' },
+];
+
+export { product, reviews, star, ratingCategories }
