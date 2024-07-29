@@ -106,12 +106,12 @@ export default function ProductDetails() {
                             {/* Price */}
                             <div
                                 className={
-                                    "flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-6"
+                                    "flex space-x-5 items-center  text-gray-900 mt-6"
                                 }
                             >
                                 <p className="font-semibold">{product.discountPrice}</p>
                                 <p className="font-semibold opacity-50 line-through">{product.price}</p>
-                                <p className="text-green-600k font-semibold">{product.off}</p>
+                                <p className="text-green-600 font-semibold">{product.off}</p>
                             </div>
 
                             {/* Reviews */}
