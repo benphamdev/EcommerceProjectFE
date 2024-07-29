@@ -1,8 +1,10 @@
 import { Radio, RadioGroup } from "@headlessui/react";
 import { Box, Button, Grid, LinearProgress, Rating } from "@mui/material";
 import React, { useState } from "react";
+import { mens_kurta } from "../../../../shared/data/Men/men_kurta";
 import { classNames } from "../../../../shared/utils/FunctionCommon";
 import { product, ratingCategories, star } from "../../../../shared/utils/product";
+import HomeSectionCard from "../home-section-card/HomeSectionCard";
 import ProductReviewCard from "./ProductReviewCard";
 
 export default function ProductDetails() {
@@ -443,7 +445,17 @@ export default function ProductDetails() {
                     </div>
                 </section>
 
-                
+                {/*Similar products*/}
+                <section className={"pt-10 lg:px-20"}>
+                    <h1 className="py-5 text-xl font-bold">Similar products</h1>
+
+                    <div className={'flex flex-row flex-wrap gap-10 justify-between'}>
+                        {mens_kurta.slice(1, 10).map((item, index) =>
+                            <HomeSectionCard product={item} key={index}/>
+                        )}
+                    </div>
+                </section>
+
             </div>
         </div>
     );
