@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { navigation } from "../../../config/navigationMenu";
 import { getUser } from "../../../Redux/Auth/Action";
-import { getCart } from "../../../Redux/Customers/Cart/Action";
+import { getCart } from "../../../Redux/Customers/cart/Action";
 import AuthModal from "../Auth/AuthModal";
 
 export default function Navigation() {
@@ -473,7 +473,7 @@ export default function Navigation() {
                                     </p>
                                 </div>
 
-                                {/* Cart */}
+                                {/* cart */}
                                 <div className="ml-4 flow-root lg:ml-6">
                                     <Button
                                         onClick={() => navigate("/cart")}

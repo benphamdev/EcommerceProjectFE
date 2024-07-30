@@ -1,4 +1,4 @@
-import Cart from "./features/customer/components/Cart/Cart";
+import Checkout from "./features/customer/components/checkout/Checkout";
 import Footer from "./features/customer/components/footer/Footer";
 import Navigation from "./features/customer/components/navigation/Navigation";
 import "./styles/App.css";
@@ -14,7 +14,8 @@ function App() {
                 {/*<HomePage/>*/}
                 {/*<Product />*/}
                 {/*<ProductDetails/>*/}
-                <Cart/>
+                {/*<Cart/>*/}
+                <Checkout/>
             </div>
 
             <div>
