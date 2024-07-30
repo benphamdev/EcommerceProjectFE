@@ -1,9 +1,15 @@
 import React from 'react';
+import AddressCard from "../address-card/AddressCard";
+import Cart from "../cart/Cart";
 
 const OrderSummary = () => {
     return (
         <div>
-            <h1>Order Summary</h1>
+            <div className='p-5 shadow-lg rounded-s-md border'>
+                <AddressCard/>
+
+                <Cart/>
+            </div>
         </div>
     );
 };

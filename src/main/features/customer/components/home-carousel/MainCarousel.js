@@ -10,9 +10,7 @@ export const MainCarousel = () => {
     //     </div>
     // ));
 
-    const items = MainCarouselData.map((item) => (
-        <img className="cursor-pointer" role="presentation" src={item.image} />
-    ));
+    const items = MainCarouselData.map((item) => <img className="cursor-pointer" src={item.image} alt="" />);
 
     return (
         <>

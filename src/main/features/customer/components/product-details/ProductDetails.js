@@ -41,7 +41,7 @@ export default function ProductDetails() {
                                         aria-hidden="true"
                                         className="h-5 w-4 text-gray-300"
                                     >
-                                        <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z"/>
+                                        <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
                                     </svg>
                                 </div>
                             </li>
@@ -75,7 +75,7 @@ export default function ProductDetails() {
                                 <div
                                     className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg
                                     max-w-[5rem] max-h-[5rem]"
-                                    key={'image-' + index}
+                                    key={"image-" + index}
                                 >
                                     <img
                                         alt={image.alt}
@@ -88,9 +88,7 @@ export default function ProductDetails() {
                     </div>
 
                     {/* Product info */}
-                    <div
-                        className="lg:col-span-1 max-t-auto max-w-2xl px-4 pb-16 sm:px-6 lg:max-w-7xl lg:px-8 lg:pb-24-">
-
+                    <div className="lg:col-span-1 max-t-auto max-w-2xl px-4 pb-16 sm:px-6 lg:max-w-7xl lg:px-8 lg:pb-24-">
                         {/* Product title and description */}
                         <div className="lg:col-span-2">
                             <h1 className="text-lg lg:text-xl font-semibold text-gray-900">{product.name}</h1>
@@ -104,11 +102,7 @@ export default function ProductDetails() {
                             <h2 className="sr-only">Product information</h2>
 
                             {/* Price */}
-                            <div
-                                className={
-                                    "flex space-x-5 items-center  text-gray-900 mt-6"
-                                }
-                            >
+                            <div className={"flex space-x-5 items-center  text-gray-900 mt-6"}>
                                 <p className="font-semibold">{product.discountPrice}</p>
                                 <p className="font-semibold opacity-50 line-through">{product.price}</p>
                                 <p className="text-green-600 font-semibold">{product.off}</p>
@@ -117,7 +111,7 @@ export default function ProductDetails() {
                             {/* Reviews */}
                             <div className="mt-6">
                                 <div className={"flex items-center space-x-3"}>
-                                    <Rating name="read-only" value={3} readOnly/>
+                                    <Rating name="read-only" value={3} readOnly />
                                     <p className={"opacity-50 text-sm"}>500 ratings</p>
                                     <p
                                         className={
@@ -192,8 +186,8 @@ export default function ProductDetails() {
                                                             ? "cursor-pointer bg-white text-gray-900 shadow-sm"
                                                             : "cursor-not-allowed bg-gray-50 text-gray-200",
                                                         "group relative flex items-center justify-center rounded-md border " +
-                                                        "px-4 py-3 text-xs font-medium uppercase hover:bg-gray-50 focus:outline-none " +
-                                                        "data-[focus]:ring-2 data-[focus]:ring-indigo-500 sm:flex-1 sm:py-3"
+                                                            "px-4 py-3 text-xs font-medium uppercase hover:bg-gray-50 focus:outline-none " +
+                                                            "data-[focus]:ring-2 data-[focus]:ring-indigo-500 sm:flex-1 sm:py-3"
                                                     )}
                                                 >
                                                     <span>{size.name}</span>
@@ -264,8 +258,7 @@ export default function ProductDetails() {
                         </div>
 
                         {/* Description and details */}
-                        <div
-                            className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
+                        <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
                             {/* Description and details */}
                             <h3 className="sr-only">Description</h3>
                             <div className="space-y-6">
@@ -313,9 +306,11 @@ export default function ProductDetails() {
                     <h1 className="text-lg lg:text-xl font-semibold text-gray-900">Reviews & Rating</h1>
 
                     {/*Write a review & Product ratings*/}
-                    <div className={"border p-5 my-5"} style={{ background: '#f8f1f1', borderRadius: '1rem' }}>
+                    <div
+                        className={"border p-5 my-5"}
+                        style={{ background: "#f8f1f1", borderRadius: "1rem" }}
+                    >
                         <Grid container spacing={7}>
-
                             {/*Write a review*/}
                             <Grid item xs={7}>
                                 <h1 className="text-lg lg:text-xl font-semibold text-gray-900">
@@ -323,7 +318,7 @@ export default function ProductDetails() {
                                 </h1>
 
                                 <div className="mt-5">
-                                    <Rating name="read-only" value={0} precision={0.5}/>
+                                    <Rating name="read-only" value={0} precision={0.5} />
                                 </div>
 
                                 <div className="mt-5">
@@ -359,20 +354,25 @@ export default function ProductDetails() {
                                 </h1>
 
                                 <div className="flex items-center space-x-3">
-                                    <Rating name="read-only" value={4.6} readOnly precision={0.5}/>
+                                    <Rating name="read-only" value={4.6} readOnly precision={0.5} />
                                     <p className="opacity-60">548 Ratings</p>
                                 </div>
 
                                 {ratingCategories.map((item) => (
                                     <Box className="mt-5" key={item.label}>
-                                        <Grid container justifyContent={"center"} alignItems={"center"} gap={2}>
+                                        <Grid
+                                            container
+                                            justifyContent={"center"}
+                                            alignItems={"center"}
+                                            gap={2}
+                                        >
                                             <Grid item xs={3}>
-                                                <p className={'text-sm'}>{item.label}</p>
+                                                <p className={"text-sm"}>{item.label}</p>
                                             </Grid>
 
                                             <Grid item xs={7}>
                                                 <LinearProgress
-                                                    className='ring-emerald-950'
+                                                    className="ring-emerald-950"
                                                     variant="determinate"
                                                     value={item.value}
                                                     sx={{
@@ -390,20 +390,24 @@ export default function ProductDetails() {
                     </div>
 
                     {/*Sort by: rating & Customer's comment*/}
-                    <div className={"border p-0 my-10"} style={{ background: '#f8f5f5', borderRadius: '1rem' }}>
+                    <div
+                        className={"border p-0 my-10"}
+                        style={{ background: "#f8f5f5", borderRadius: "1rem" }}
+                    >
                         {/*Sort by: rating*/}
                         <Grid container>
-                            <div className={'flex flex-row gap-4 px-5 py-10 w-full'}
-                                 color={'#9155fd'}
-                                 style={{
-                                     background: '#ffe6e6',
-                                     borderRadius: '0.5rem',
-                                     border: '1px solid #f6efef',
-                                 }}
+                            <div
+                                className={"flex flex-row gap-4 px-5 py-10 w-full"}
+                                color={"#9155fd"}
+                                style={{
+                                    background: "#ffe6e6",
+                                    borderRadius: "0.5rem",
+                                    border: "1px solid #f6efef",
+                                }}
                             >
                                 <div>
-                                    <p className={'text-lg'}>4.5 above 5</p>
-                                    <Rating name="read-only" value={4.5} readOnly precision={0.5}/>
+                                    <p className={"text-lg"}>4.5 above 5</p>
+                                    <Rating name="read-only" value={4.5} readOnly precision={0.5} />
                                 </div>
 
                                 <RadioGroup
@@ -418,8 +422,8 @@ export default function ProductDetails() {
                                             className={classNames(
                                                 "cursor-pointer bg-white text-gray-800 shadow-sm",
                                                 "group relative flex items-center justify-center rounded-md border " +
-                                                "px-4 py-2 text-xs font-medium lowercase hover:bg-gray-50 focus:outline-none " +
-                                                "data-[focus]:ring-2 data-[focus]:ring-indigo-500 sm:flex-1 sm:py-0"
+                                                    "px-4 py-2 text-xs font-medium lowercase hover:bg-gray-50 focus:outline-none " +
+                                                    "data-[focus]:ring-2 data-[focus]:ring-indigo-500 sm:flex-1 sm:py-0"
                                             )}
                                             style={{ height: "2rem" }}
                                         >
@@ -438,7 +442,7 @@ export default function ProductDetails() {
                         <Grid item xs={7}>
                             <div className={"space-y-5 my-10 p-10"}>
                                 {[1, 1, 1].map((item, index) => (
-                                    <ProductReviewCard key={index}/>
+                                    <ProductReviewCard key={index} />
                                 ))}
                             </div>
                         </Grid>
@@ -449,13 +453,12 @@ export default function ProductDetails() {
                 <section className={"pt-10 lg:px-20"}>
                     <h1 className="py-5 text-xl font-bold">Similar products</h1>
 
-                    <div className={'flex flex-row flex-wrap gap-10 justify-between'}>
-                        {mens_kurta.slice(1, 10).map((item, index) =>
-                            <HomeSectionCard product={item} key={index}/>
-                        )}
+                    <div className={"flex flex-row flex-wrap gap-10 justify-between"}>
+                        {mens_kurta.slice(1, 10).map((item, index) => (
+                            <HomeSectionCard product={item} key={index} />
+                        ))}
                     </div>
                 </section>
-
             </div>
         </div>
     );
