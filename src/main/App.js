@@ -1,13 +1,13 @@
-import Checkout from "./features/customer/components/checkout/Checkout";
 import Footer from "./features/customer/components/footer/Footer";
 import Navigation from "./features/customer/components/navigation/Navigation";
+import { OrderDetail } from "./features/customer/components/order/OrderDetail";
 import "./styles/App.css";
 
 function App() {
     return (
         <div className="App">
             <div className="">
-                <Navigation/>
+                <Navigation />
             </div>
 
             <div>
@@ -15,11 +15,13 @@ function App() {
                 {/*<Product />*/}
                 {/*<ProductDetails/>*/}
                 {/*<Cart/>*/}
-                <Checkout/>
+                {/* <Checkout/> */}
+                {/* <Order /> */}
+                <OrderDetail />
             </div>
 
             <div>
-                <Footer/>
+                <Footer />
             </div>
         </div>
     );
