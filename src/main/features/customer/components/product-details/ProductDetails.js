@@ -1,6 +1,7 @@
 import { Radio, RadioGroup } from "@headlessui/react";
 import { Box, Button, Grid, LinearProgress, Rating } from "@mui/material";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { mens_kurta } from "../../../../shared/data/Men/men_kurta";
 import { classNames } from "../../../../shared/utils/FunctionCommon";
 import { product, ratingCategories, star } from "../../../../shared/utils/product";
@@ -12,8 +13,12 @@ export default function ProductDetails() {
     const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
     const [showFullDescription, setShowFullDescription] = useState(false);
     const [selectedStar, setSelectedStar] = useState(star[5]);
-
+    const navigate = useNavigate();
     const toggleShowFullDescription = () => setShowFullDescription(!showFullDescription);
+
+    const handleAddCart = () => {
+        navigate("/cart");
+    };
 
     return (
         <div className="bg-white">
@@ -41,7 +46,7 @@ export default function ProductDetails() {
                                         aria-hidden="true"
                                         className="h-5 w-4 text-gray-300"
                                     >
-                                        <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                                        <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z"/>
                                     </svg>
                                 </div>
                             </li>
@@ -88,7 +93,8 @@ export default function ProductDetails() {
                     </div>
 
                     {/* Product info */}
-                    <div className="lg:col-span-1 max-t-auto max-w-2xl px-4 pb-16 sm:px-6 lg:max-w-7xl lg:px-8 lg:pb-24-">
+                    <div
+                        className="lg:col-span-1 max-t-auto max-w-2xl px-4 pb-16 sm:px-6 lg:max-w-7xl lg:px-8 lg:pb-24-">
                         {/* Product title and description */}
                         <div className="lg:col-span-2">
                             <h1 className="text-lg lg:text-xl font-semibold text-gray-900">{product.name}</h1>
@@ -111,7 +117,7 @@ export default function ProductDetails() {
                             {/* Reviews */}
                             <div className="mt-6">
                                 <div className={"flex items-center space-x-3"}>
-                                    <Rating name="read-only" value={3} readOnly />
+                                    <Rating name="read-only" value={3} readOnly/>
                                     <p className={"opacity-50 text-sm"}>500 ratings</p>
                                     <p
                                         className={
@@ -186,8 +192,8 @@ export default function ProductDetails() {
                                                             ? "cursor-pointer bg-white text-gray-900 shadow-sm"
                                                             : "cursor-not-allowed bg-gray-50 text-gray-200",
                                                         "group relative flex items-center justify-center rounded-md border " +
-                                                            "px-4 py-3 text-xs font-medium uppercase hover:bg-gray-50 focus:outline-none " +
-                                                            "data-[focus]:ring-2 data-[focus]:ring-indigo-500 sm:flex-1 sm:py-3"
+                                                        "px-4 py-3 text-xs font-medium uppercase hover:bg-gray-50 focus:outline-none " +
+                                                        "data-[focus]:ring-2 data-[focus]:ring-indigo-500 sm:flex-1 sm:py-3"
                                                     )}
                                                 >
                                                     <span>{size.name}</span>
@@ -250,6 +256,7 @@ export default function ProductDetails() {
                                                  text-white hover:bg-indigo-700 focus:outline-none focus:ring-2
                                                  focus:ring-indigo-500 focus:ring-offset-2"
                                         style={{ height: "3rem" }}
+                                        onClick={handleAddCart}
                                     >
                                         Add to bag
                                     </button>
@@ -258,7 +265,8 @@ export default function ProductDetails() {
                         </div>
 
                         {/* Description and details */}
-                        <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
+                        <div
+                            className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
                             {/* Description and details */}
                             <h3 className="sr-only">Description</h3>
                             <div className="space-y-6">
@@ -318,7 +326,7 @@ export default function ProductDetails() {
                                 </h1>
 
                                 <div className="mt-5">
-                                    <Rating name="read-only" value={0} precision={0.5} />
+                                    <Rating name="read-only" value={0} precision={0.5}/>
                                 </div>
 
                                 <div className="mt-5">
@@ -354,7 +362,7 @@ export default function ProductDetails() {
                                 </h1>
 
                                 <div className="flex items-center space-x-3">
-                                    <Rating name="read-only" value={4.6} readOnly precision={0.5} />
+                                    <Rating name="read-only" value={4.6} readOnly precision={0.5}/>
                                     <p className="opacity-60">548 Ratings</p>
                                 </div>
 
@@ -407,7 +415,7 @@ export default function ProductDetails() {
                             >
                                 <div>
                                     <p className={"text-lg"}>4.5 above 5</p>
-                                    <Rating name="read-only" value={4.5} readOnly precision={0.5} />
+                                    <Rating name="read-only" value={4.5} readOnly precision={0.5}/>
                                 </div>
 
                                 <RadioGroup
@@ -422,8 +430,8 @@ export default function ProductDetails() {
                                             className={classNames(
                                                 "cursor-pointer bg-white text-gray-800 shadow-sm",
                                                 "group relative flex items-center justify-center rounded-md border " +
-                                                    "px-4 py-2 text-xs font-medium lowercase hover:bg-gray-50 focus:outline-none " +
-                                                    "data-[focus]:ring-2 data-[focus]:ring-indigo-500 sm:flex-1 sm:py-0"
+                                                "px-4 py-2 text-xs font-medium lowercase hover:bg-gray-50 focus:outline-none " +
+                                                "data-[focus]:ring-2 data-[focus]:ring-indigo-500 sm:flex-1 sm:py-0"
                                             )}
                                             style={{ height: "2rem" }}
                                         >
@@ -442,7 +450,7 @@ export default function ProductDetails() {
                         <Grid item xs={7}>
                             <div className={"space-y-5 my-10 p-10"}>
                                 {[1, 1, 1].map((item, index) => (
-                                    <ProductReviewCard key={index} />
+                                    <ProductReviewCard key={index}/>
                                 ))}
                             </div>
                         </Grid>
@@ -455,7 +463,7 @@ export default function ProductDetails() {
 
                     <div className={"flex flex-row flex-wrap gap-10 justify-between"}>
                         {mens_kurta.slice(1, 10).map((item, index) => (
-                            <HomeSectionCard product={item} key={index} />
+                            <HomeSectionCard product={item} key={index}/>
                         ))}
                     </div>
                 </section>

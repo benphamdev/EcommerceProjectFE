@@ -64,6 +64,7 @@ export default function Product() {
                         className="fixed inset-0 bg-black bg-opacity-25 transition-opacity duration-300 ease-linear data-[closed]:opacity-0"
                     />
 
+                    {/*Fallback for DialogPanel*/}
                     <div className="fixed inset-0 z-40 flex">
                         <DialogPanel
                             transition
@@ -102,9 +103,11 @@ export default function Product() {
                                                 className="group flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
                                                 <span className="font-medium text-gray-900">{section.name}</span>
                                                 <span className="ml-6 flex items-center">
-                          <PlusIcon aria-hidden="true" className="h-5 w-5 group-data-[open]:hidden"/>
-                          <MinusIcon aria-hidden="true" className="h-5 w-5 [.group:not([data-open])_&]:hidden"/>
-                        </span>
+                                                  <PlusIcon aria-hidden="true"
+                                                            className="h-5 w-5 group-data-[open]:hidden"/>
+                                                  <MinusIcon aria-hidden="true"
+                                                             className="h-5 w-5 [.group:not([data-open])_&]:hidden"/>
+                                                </span>
                                             </DisclosureButton>
                                         </h3>
                                         <DisclosurePanel className="pt-6">
@@ -136,7 +139,10 @@ export default function Product() {
                     </div>
                 </Dialog>
 
+                {/* Main content */}
                 <main className="mx-auto px-4 sm:px-6 lg:px-20">
+
+                    {/*Header and sort*/}
                     <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
                         <h1 className="text-4xl font-bold tracking-tight text-gray-900">New Arrivals</h1>
 
@@ -190,6 +196,7 @@ export default function Product() {
                         </div>
                     </div>
 
+                    {/*Body*/}
                     <section aria-labelledby="products-heading" className="pb-24 pt-6">
                         <h2 id="products-heading" className="sr-only">
                             Products
@@ -298,7 +305,7 @@ export default function Product() {
 
                             </div>
 
-                            {/* product grid */}
+                            {/* Product grid */}
                             <div className="lg:col-span-4 w-full">
                                 <div className={'flex flex-wrap justify-center bg-white py-5'}>
                                     {
@@ -306,9 +313,7 @@ export default function Product() {
                                             <ProductCard product={product} key={index}/>)
                                     }
                                 </div>
-
                             </div>
-
                         </div>
                     </section>
                 </main>

@@ -1,8 +1,15 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
 
 const Cart = () => {
+    const navigate = useNavigate();
+
+    const handleCheckout = () => {
+        navigate("/checkout/?step=2");
+    }
+
     return (
         <>
             <div className={"lg:grid grid-cols-3 lg:px-16 relative mt-10"}>
@@ -14,7 +21,7 @@ const Cart = () => {
                 ) : (
                     <div className={"col-span-2 space-y-10"}>
                         {[1, 1, 1, 1, 1, 1].map((item, index) => (
-                            <CartItem key={index} />
+                            <CartItem key={index}/>
                         ))}
                     </div>
                 )}
@@ -24,7 +31,7 @@ const Cart = () => {
                     <div className={"border"}>
                         <p className={"uppercase font-bold opacity-60 pb-4"}>Price details</p>
 
-                        <hr />
+                        <hr/>
 
                         <div className={"space-y-3 text-sm font-semibold"}>
                             <div className={"flex justify-between items-center"}>
@@ -62,6 +69,7 @@ const Cart = () => {
                                 }}
                                 variant="contained"
                                 className="flex w-full items-center justify-center rounded-md border"
+                                onClick={handleCheckout}
                             >
                                 Buy now
                             </Button>
