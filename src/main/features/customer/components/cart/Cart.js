@@ -26,7 +26,7 @@ const Cart = () => {
 
                         <hr />
 
-                        <div className={"space-y-3 font-semibold text-sm font-semibold"}>
+                        <div className={"space-y-3 text-sm font-semibold"}>
                             <div className={"flex justify-between items-center"}>
                                 <span className={""}>Price (1 item)</span>
                                 <span className={"text-amber-900"}> $999</span>

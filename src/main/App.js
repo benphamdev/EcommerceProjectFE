@@ -1,28 +1,16 @@
-import Footer from "./features/customer/components/footer/Footer";
-import Navigation from "./features/customer/components/navigation/Navigation";
-import { OrderDetail } from "./features/customer/components/order/OrderDetail";
 import "./styles/App.css";
+import React, { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import CustomerRouters from "./features/routes/CustomerRouters";
 
 function App() {
     return (
         <div className="App">
-            <div className="">
-                <Navigation />
-            </div>
-
-            <div>
-                {/*<HomePage/>*/}
-                {/*<Product />*/}
-                {/*<ProductDetails/>*/}
-                {/*<Cart/>*/}
-                {/* <Checkout/> */}
-                {/* <Order /> */}
-                <OrderDetail />
-            </div>
-
-            <div>
-                <Footer />
-            </div>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                    <Route path={'/*'} element={<CustomerRouters/>}/>
+                </Routes>
+            </Suspense>
         </div>
     );
 }
