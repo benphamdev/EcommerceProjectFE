@@ -1,5 +1,3 @@
-'use client'
-
 import {
     Dialog,
     DialogBackdrop,
@@ -15,6 +13,8 @@ import {
     TabPanels,
 } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Avatar, Button, Menu, MenuItem } from "@mui/material";
+import { deepPurple } from "@mui/material/colors";
 import { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -67,9 +67,11 @@ export default function Navigation() {
     }
     const handleMyOrderClick = () => {
         handleCloseUserMenu();
-        // auth.user?.role === "ROLE_ADMIN"
+        // auth?.user?.role === "ROLE_ADMIN"
         //     ? navigate("/admin")
         //     : navigate("/account/order");
+
+        navigate("/account/order");
     };
 
     return (
@@ -206,12 +208,15 @@ export default function Navigation() {
                 </div>
             </Dialog>
 
+            {/* Desktop menu */}
             <header className="relative bg-white">
+                {/* Top bar */}
                 <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
                     Get free delivery on orders over $100
                 </p>
 
-                <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                {/* Main bar */}
+                <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-3 lg:px-4">
                     <div className="border-b border-gray-200">
                         <div className="flex h-16 items-center">
                             <button
@@ -336,29 +341,8 @@ export default function Navigation() {
                                 </div>
                             </PopoverGroup>
 
+
                             <div className="ml-auto flex items-center">
-                                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                                    <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                                        Sign in
-                                    </a>
-                                    <span aria-hidden="true" className="h-6 w-px bg-gray-200"/>
-                                    <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                                        Create account
-                                    </a>
-                                </div>
-
-                                <div className="hidden lg:ml-8 lg:flex">
-                                    <a href="#" className="flex items-center text-gray-700 hover:text-gray-800">
-                                        <img
-                                            alt=""
-                                            src="https://tailwindui.com/img/flags/flag-canada.svg"
-                                            className="block h-auto w-5 flex-shrink-0"
-                                        />
-                                        <span className="ml-3 block text-sm font-medium">CAD</span>
-                                        <span className="sr-only">, change currency</span>
-                                    </a>
-                                </div>
-
                                 {/* Search */}
                                 <div className="flex lg:ml-6">
                                     <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
@@ -368,7 +352,7 @@ export default function Navigation() {
                                 </div>
 
                                 {/* cart */}
-                                <div className="ml-4 flow-root lg:ml-6">
+                                <div className="mr-4 flow-root lg:ml-6">
                                     <a href="#" className="group -m-2 flex items-center p-2">
                                         <ShoppingBagIcon
                                             aria-hidden="true"
@@ -378,6 +362,84 @@ export default function Navigation() {
                                             className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
                                         <span className="sr-only">items in cart, view bag</span>
                                     </a>
+                                </div>
+
+                                <span aria-hidden={true} className={'h-6 w-px bg-gray-900'}/>
+
+                                {/* User */}
+                                <div
+                                    className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6 ml-6">
+                                    {
+                                        !false ? (
+                                            <>
+                                                <Avatar className={'text-white'}
+                                                        onClick={handleUserClick}
+                                                        aria-controls={openUserMenu ? 'basic-menu' : undefined}
+                                                        aria-haspopup="true"
+                                                        aria-expanded={openUserMenu ? 'true' : undefined}
+                                                        sx={{
+                                                            bgcolor: deepPurple[500],
+                                                            color: "white",
+                                                            cursor: "pointer",
+                                                        }}
+                                                >
+                                                    {auth?.user?.firstName[0].toUpperCase()}
+                                                </Avatar>
+
+                                                <Menu id="basic-menu"
+                                                      anchorEl={anchorEl}
+                                                      open={openUserMenu}
+                                                      onClose={handleCloseUserMenu}
+                                                      MenuListProps={{
+                                                          "aria-labelledby": "basic-button",
+                                                      }}
+                                                      sx={{
+                                                          "& .MuiMenu-paper": {
+                                                              borderRadius: "0.5rem",
+                                                              boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+                                                              margin: "0.5rem 0 0 0.8rem",
+                                                          },
+                                                      }}
+                                                >
+
+                                                    <MenuItem onClick={handleCloseUserMenu}>
+                                                        Profile
+                                                    </MenuItem>
+
+                                                    <MenuItem onClick={handleMyOrderClick}>
+                                                        {auth?.user?.role === "ROLE_ADMIN"
+                                                            ? "Admin Dashboard"
+                                                            : "My orders"}
+                                                    </MenuItem>
+
+                                                    <hr className="my-1"/>
+                                                    <MenuItem onClick={handleLogout}>Log out</MenuItem>
+                                                </Menu>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Button
+                                                    onClick={handleAuthModalOpen}
+                                                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                                                    sx={{
+                                                        border: "1px solid",
+                                                        borderColor: "gray.300",
+                                                        borderRadius: "1rem",
+                                                        padding: "0.5rem 1rem",
+                                                        ":hover": {
+                                                            borderColor: "gray.400",
+                                                        },
+                                                        ":focus": {
+                                                            borderColor: "gray.400",
+                                                        },
+                                                        transition: "border-color 0.2s",
+                                                    }}
+                                                >
+                                                    Sign in
+                                                </Button>
+                                            </>
+                                        )
+                                    }
                                 </div>
                             </div>
                         </div>
